@@ -8,5 +8,5 @@ message OwnerMappings {
 
 message OwnerMapping {
   bytes label = 1;
-  bytes owner = 2;
+  string owner = 2;
 }
