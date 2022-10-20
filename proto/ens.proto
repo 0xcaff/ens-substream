@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package ens.types;
+
+message OwnerMappings {
+  repeated OwnerMapping mappings = 1;
+}
+
+message OwnerMapping {
+  bytes label = 1;
+  bytes owner = 2;
+}
