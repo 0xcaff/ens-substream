@@ -7,6 +7,19 @@ message OwnerMappings {
 }
 
 message OwnerMapping {
-  bytes label = 1;
+  string node = 1;
+  string label = 2;
+  string owner = 3;
+  uint64 ordinal = 4;
+}
+
+message ResolverMappings {
+  repeated ResolverMapping mappings = 1;
+}
+
+message ResolverMapping {
+  string node = 1;
   string owner = 2;
+  string resolver = 3;
+  uint64 ordinal = 4;
 }

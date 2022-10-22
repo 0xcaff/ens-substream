@@ -25,3 +25,25 @@ modules:
       - source: sf.ethereum.type.v2.Block
     output:
       type: proto:ens.types.OwnerMappings
+
+  - name: owner_mappings_to_store
+    kind: store
+    updatePolicy: set
+    valueType: proto:ens.types.OwnerMapping
+    inputs:
+      - map: block_to_owner_mappings
+
+  - name: block_to_resolver_mappings
+    kind: map
+    inputs:
+      - source: sf.ethereum.type.v2.Block
+      - store: owner_mappings_to_store
+    output:
+      type: proto:ens.types.ResolverMappings
+
+  - name: aggregate
+    kind: store
+    updatePolicy: add
+    valueType: int64
+    inputs:
+      - map: block_to_resolver_mappings

@@ -4,7 +4,7 @@ build:
 
 .PHONY: stream
 stream:
-	substreams run -e api.streamingfast.io:443 substreams.yaml block_to_owner_mappings -s 15791337 -t +1
+	substreams run -e api.streamingfast.io:443 substreams.yaml aggregate
 
 .PHONY: codegen
 codegen:
